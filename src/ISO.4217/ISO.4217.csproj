@@ -3,6 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>ISO._4217</RootNamespace>
+    <Authors>Anthony Maisak</Authors>
+    <Company>Anthony Maisak</Company>
+    <Description>Resolver for ISO-4217 codes.</Description>
+    <Copyright>Copyright 2019</Copyright>
+    <PackageId>ISO.CurrencyCodes</PackageId>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/maisak/iso.4217</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/maisak/iso.4217</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>.net standard 2.0; iso;</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

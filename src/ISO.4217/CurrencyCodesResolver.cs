@@ -34,6 +34,7 @@ namespace ISO._4217
             return _instance;
         }
 
+        #region Get currency data by number
         public IEnumerable<Currency> GetCurrenciesByNumber(string number)
         {
             return _codes.FindAll(x => x.Num == number);
@@ -43,5 +44,11 @@ namespace ISO._4217
         {
             return _codes.FirstOrDefault(x => x.Num == number)?.Code;
         }
+
+        public string GetCurrencyNameByNumber(string number)
+        {
+            return _codes.FirstOrDefault(x => x.Num == number)?.Name;
+        } 
+        #endregion
     }
 }

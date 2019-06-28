@@ -39,5 +39,15 @@ namespace Tests
             var currencies = _resolver.GetCurrenciesByNumber(number);
             Assert.IsEmpty(currencies);
         }
+
+        [TestCase("978", "Euro")]
+        [TestCase("980", "Hryvnia")]
+        [TestCase("840", "US Dollar")]
+        [TestCase("000", null)]
+        public void GetCurrencyNameByNumberTest(string number, string expected)
+        {
+            var code = _resolver.GetCurrencyNameByNumber(number);
+            Assert.AreEqual(expected, code);
+        }
     }
 }
