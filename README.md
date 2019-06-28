@@ -12,9 +12,7 @@ Next code:
 ```
 public void Demo()
 {
-    var resolver = CurrencyCodesResolver.Load();
-
-    var code = resolver.GetCodeByNumber("978");
+    var code = CurrencyCodesResolver.GetCodeByNumber("978");
 
     Console.WriteLine(code);
 }
