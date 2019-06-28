@@ -6,12 +6,10 @@ namespace Tests
     [TestFixture]
     public class ResolverTests
     {
-        private CurrencyCodesResolver _resolver;
-
         [SetUp]
         public void Setup()
         {
-            _resolver = CurrencyCodesResolver.Load();
+            
         }
 
         [TestCase("978", "EUR")]
@@ -20,7 +18,7 @@ namespace Tests
         [TestCase("000", null)]
         public void GetCodeByNumberTest(string number, string expected)
         {
-            var code = _resolver.GetCodeByNumber(number);
+            var code = CurrencyCodesResolver.GetCodeByNumber(number);
             Assert.AreEqual(expected, code);
         }
 
@@ -29,14 +27,14 @@ namespace Tests
         [TestCase("840")]
         public void GetCurrenciesByNumberTest(string number)
         {
-            var currencies = _resolver.GetCurrenciesByNumber(number);
+            var currencies = CurrencyCodesResolver.GetCurrenciesByNumber(number);
             Assert.IsNotEmpty(currencies);
         }
 
         [TestCase("000")]
         public void GetCurrenciesByNumberTestFail(string number)
         {
-            var currencies = _resolver.GetCurrenciesByNumber(number);
+            var currencies = CurrencyCodesResolver.GetCurrenciesByNumber(number);
             Assert.IsEmpty(currencies);
         }
 
@@ -46,7 +44,7 @@ namespace Tests
         [TestCase("000", null)]
         public void GetCurrencyNameByNumberTest(string number, string expected)
         {
-            var code = _resolver.GetCurrencyNameByNumber(number);
+            var code = CurrencyCodesResolver.GetCurrencyNameByNumber(number);
             Assert.AreEqual(expected, code);
         }
     }
