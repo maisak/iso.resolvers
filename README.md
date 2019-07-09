@@ -1,6 +1,6 @@
 # ISO resolvers
 ## ISO-4217 (currency codes) resolver 
-![NuGet version (ISO.4217.CurrencyCodes)](https://img.shields.io/nuget/v/ISO.4217.CurrencyCodes.svg?style=flat-square)
+[![NuGet version (ISO.4217.CurrencyCodes)](https://img.shields.io/nuget/v/ISO.4217.CurrencyCodes.svg?style=flat-square)](https://www.nuget.org/packages/ISO.4217.CurrencyCodes/)
 
 Resolver for ISO-4217 codes.
 ### Data matrix
@@ -23,7 +23,7 @@ public void Demo()
 Outputs:
 `EUR`
 ## ISO-18245 (merchant category codes) resolver
-![NuGet version (ISO.18245.MerchantCategoryCodes)](https://img.shields.io/nuget/v/ISO.18245.MerchantCategoryCodes.svg?style=flat-square)
+[![NuGet version (ISO.18245.MerchantCategoryCodes)](https://img.shields.io/nuget/v/ISO.18245.MerchantCategoryCodes.svg?style=flat-square)](https://www.nuget.org/packages/ISO.18245.MerchantCategoryCodes/)
 
 Resolver for ISO-18245 codes.
 ### Data matrix
