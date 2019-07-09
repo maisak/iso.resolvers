@@ -329,3 +329,5 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 /PublishNugetPackage.ps1
+/PublishNugetPackage-18245.ps1
+/PublishNugetPackage-4217.ps1
