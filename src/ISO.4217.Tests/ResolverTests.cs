@@ -1,3 +1,4 @@
+using System;
 using ISO._4217;
 using NUnit.Framework;
 
@@ -6,10 +7,13 @@ namespace Tests
     [TestFixture]
     public class ResolverTests
     {
-        [SetUp]
-        public void Setup()
+        /// <summary>
+        /// Not actually a test, shows time needed to load xml file
+        /// </summary>
+        [Test]
+        public void XmlLoadPerformance()
         {
-            
+            Console.WriteLine($"Spent: {CurrencyCodesResolver.Spent}ms");
         }
 
         [TestCase("978", "EUR")]

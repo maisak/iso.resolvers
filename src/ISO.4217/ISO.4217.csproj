@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/maisak/iso.4217</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>.net_standard_2.0 iso_4217</PackageTags>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
