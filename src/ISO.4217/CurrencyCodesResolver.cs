@@ -7,6 +7,9 @@ using System.Xml.XPath;
 
 namespace ISO._4217
 {
+    /// <summary>
+    /// Source is here https://www.currency-iso.org/dam/downloads/lists/list_one.xml
+    /// </summary>
     public static class CurrencyCodesResolver
     {
         public static long Spent { get; }

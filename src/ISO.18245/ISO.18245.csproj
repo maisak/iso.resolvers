@@ -2,28 +2,31 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>ISO._4217</RootNamespace>
+    <RootNamespace>ISO._18245</RootNamespace>
     <Authors>Anthony Maisak</Authors>
     <Company>Anthony Maisak</Company>
-    <Description>Resolver for ISO-4217 codes.</Description>
+    <Product>ISO.18245</Product>
+    <Description>Resolver for ISO-18245 codes.</Description>
     <Copyright>Copyright 2019</Copyright>
-    <PackageId>ISO.4217.CurrencyCodes</PackageId>
-    <PackageLicenseExpression></PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/maisak/iso.resolvers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/maisak/iso.resolvers</RepositoryUrl>
-    <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>.net-standard-2.0 iso-4217</PackageTags>
-    <Version>1.0.4</Version>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>.net-standard-2.0 iso-18245</PackageTags>
+    <PackageId>ISO.18245.MerchantCategoryCodes</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="codes.xml" />
+    <None Remove="codes.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="codes.xml">
+    <EmbeddedResource Include="codes.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
 </Project>
