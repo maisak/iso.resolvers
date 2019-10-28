@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/maisak/iso.resolvers</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>.net-standard-2.0 iso-4217</PackageTags>
-    <Version>1.0.4</Version>
+    <Version>1.0.6</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,9 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="codes.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Content Include="ISO.4217.CurrencyCodes.targets" PackagePath="build/ISO.4217.CurrencyCodes.targets" />
+    <Content Include="codes.xml" Pack="true" PackagePath="/">
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+    </Content>
   </ItemGroup>
 
 </Project>

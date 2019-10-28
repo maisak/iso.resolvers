@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -13,16 +13,16 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>.net-standard-2.0 iso-18245</PackageTags>
     <PackageId>ISO.18245.MerchantCategoryCodes</PackageId>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="codes.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="codes.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Content Include="ISO.18245.MerchantCategoryCodes.targets" PackagePath="build/ISO.18245.MerchantCategoryCodes.targets" />
+    <Content Include="codes.json" Pack="true" PackagePath="/">
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
