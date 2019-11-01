@@ -11,7 +11,7 @@
     <RepositoryUrl>https://github.com/maisak/iso.resolvers</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>.net-standard-2.0 iso-3166</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

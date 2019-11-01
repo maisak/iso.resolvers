@@ -4,6 +4,6 @@
       <CodesFile Include="$(MSBuildThisFileDirectory)..\codes.xml" />
   </ItemGroup>
   <Target Name="CopyCodesFile" BeforeTargets="Build">
-      <Copy SourceFiles="@(CodesFile)" DestinationFolder="$(SolutionDir)\bin\$(Configuration)\$(TargetFramework)" />
+      <Copy SourceFiles="@(CodesFile)" DestinationFolder="$(ProjectDir)\bin\$(Configuration)\$(TargetFramework)" />
   </Target>
 </Project>

@@ -13,9 +13,9 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>.net-standard-2.0 iso-18245</PackageTags>
     <PackageId>ISO.18245.MerchantCategoryCodes</PackageId>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
-    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>
