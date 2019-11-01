@@ -44,3 +44,26 @@ public void Demo()
 ```
 Outputs:
 `Taxicabs and Limousines`
+## ISO-3166 (country codes) resolver
+[![NuGet version (ISO.3166.CountryCodes)](https://img.shields.io/nuget/v/ISO.3166.CountryCodes.svg?style=flat-square)](https://www.nuget.org/packages/ISO.3166.CountryCodes/)
+
+Resolver for ISO-3166 codes.
+### Data matrix
+| Code | Name |
+|--------|------|
+| UA | Ukraine |
+| NO | Norway |
+|...|...|
+### How to use
+Next code:
+```
+public void Demo()
+{
+    var cc = CountryCodesResolver.GetByCode("UA");
+
+    Console.WriteLine(cc.Name);
+}
+```
+Outputs:
+`Ukraine`
+
