@@ -6,20 +6,27 @@ namespace ISO._3166.Tests
     [TestFixture]
     public class ResolverTests
     {
-        /// <summary>
-        /// Not actually a test, shows time needed to load json file
-        /// </summary>
-        [Test]
-        public void XmlLoadPerformance()
+        [TestCase("UA", "Ukraine")]
+        [TestCase("GB", "United Kingdom")]
+        public void GetByAlpha2CodeTest(string code, string description)
         {
-            Console.WriteLine($"Spent: {CountryCodesResolver.Spent}ms");
+            var cc = CountryCodesResolver.GetByAlpha2Code(code);
+            Assert.AreEqual(cc.Name, description);
         }
 
-        [TestCase("UA", "Ukraine")]
-        public void GetByCodeTest(string code, string description)
+        [TestCase("UKR", "Ukraine")]
+        [TestCase("GBR", "United Kingdom")]
+        public void GetByAlpha3CodeTest(string code, string description)
         {
-            var cc = CountryCodesResolver.GetByCode(code);
-            Assert.AreEqual(cc.Name, description);
+            var cc = CountryCodesResolver.GetByAlpha3Code(code);
+            Assert.AreEqual(description, cc.Name);
+        }
+
+        [Test]
+        public void GetListTest()
+        {
+            var list = CountryCodesResolver.GetList();
+            Assert.Greater(list.Count, 0);
         }
     }
 }
