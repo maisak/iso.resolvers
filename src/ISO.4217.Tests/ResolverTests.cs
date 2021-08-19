@@ -6,6 +6,7 @@ namespace Tests
     [TestFixture]
     public class ResolverTests
     {
+        #region By number
         [TestCase("978", "EUR")]
         [TestCase("980", "UAH")]
         [TestCase("840", "USD")]
@@ -61,5 +62,27 @@ namespace Tests
             var code = CurrencyCodesResolver.GetCurrencyNameByNumber(number);
             Assert.AreEqual(expected, code);
         }
+        #endregion
+
+        #region By code
+        [TestCase("EUR", "EUR")]
+        [TestCase("UAH", "UAH")]
+        [TestCase("USD", "USD")]
+        [TestCase("usd", "USD")]
+        [TestCase(null, null)]
+        [TestCase("ZUZ", null)]
+        [TestCase("just text", null)]
+        public void GetCurrencyByCodeTest(string code, string expectedResultCode)
+        {
+            var currency = CurrencyCodesResolver.GetCurrencyByCode(code);
+            if (expectedResultCode is null)
+                Assert.IsNull(currency);
+            else
+            {
+                Assert.IsNotNull(currency);
+                Assert.AreEqual(expectedResultCode, currency.Code);
+            }
+        }
+        #endregion
     }
 }
