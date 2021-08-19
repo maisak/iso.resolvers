@@ -322,6 +322,27 @@ namespace ISO._4217
         {
             return GetCurrencyNameByNumber(number.ToString());
         }
+
+        /// <summary>
+        /// Get currency by international number
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns><see cref="Currency"/> object or <see cref="null"/> if nothing is found</returns>
+        public static Currency GetCurrencyByNumber(string number)
+        {
+            return Codes.FirstOrDefault(currency => 
+                currency.Num.Equals(number, System.StringComparison.OrdinalIgnoreCase));
+        }
+
+        /// <summary>
+        /// Get currency by international number
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns><see cref="Currency"/> object or <see cref="null"/> if nothing is found</returns>
+        public static Currency GetCurrencyByNumber(int number)
+        {
+            return GetCurrencyByNumber(number.ToString());
+        }
         #endregion
 
         #region Get currency data by code

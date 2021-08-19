@@ -62,6 +62,22 @@ namespace Tests
             var code = CurrencyCodesResolver.GetCurrencyNameByNumber(number);
             Assert.AreEqual(expected, code);
         }
+
+        [TestCase(978, "EUR")]
+        [TestCase(980, "UAH")]
+        [TestCase(840, "USD")]
+        [TestCase(0, null)]
+        public void GetCurrencyByNumberTest(int number, string expectedResultCode)
+        {
+            var currency = CurrencyCodesResolver.GetCurrencyByNumber(number);
+            if (expectedResultCode is null)
+                Assert.IsNull(currency);
+            else
+            {
+                Assert.IsNotNull(currency);
+                Assert.AreEqual(expectedResultCode, currency.Code);
+            }
+        }
         #endregion
 
         #region By code
