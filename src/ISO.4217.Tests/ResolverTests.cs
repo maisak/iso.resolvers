@@ -1,3 +1,4 @@
+using System.Linq;
 using ISO._4217;
 using NUnit.Framework;
 
@@ -62,42 +63,21 @@ namespace Tests
             var code = CurrencyCodesResolver.GetCurrencyNameByNumber(number);
             Assert.AreEqual(expected, code);
         }
-
-        [TestCase(978, "EUR")]
-        [TestCase(980, "UAH")]
-        [TestCase(840, "USD")]
-        [TestCase(0, null)]
-        public void GetCurrencyByNumberTest(int number, string expectedResultCode)
-        {
-            var currency = CurrencyCodesResolver.GetCurrencyByNumber(number);
-            if (expectedResultCode is null)
-                Assert.IsNull(currency);
-            else
-            {
-                Assert.IsNotNull(currency);
-                Assert.AreEqual(expectedResultCode, currency.Code);
-            }
-        }
         #endregion
 
         #region By code
-        [TestCase("EUR", "EUR")]
-        [TestCase("UAH", "UAH")]
-        [TestCase("USD", "USD")]
-        [TestCase("usd", "USD")]
-        [TestCase(null, null)]
-        [TestCase("ZUZ", null)]
-        [TestCase("just text", null)]
-        public void GetCurrencyByCodeTest(string code, string expectedResultCode)
+        [TestCase("EUR", 35)]
+        [TestCase("UAH", 1)]
+        [TestCase("USD", 19)]
+        [TestCase("usd", 19)]
+        [TestCase(null, 0)]
+        [TestCase("ZUZ", 0)]
+        [TestCase("just text", 0)]
+        public void GetCurrenciesByCodeTest(string code, int expectedAmountOfCurrencies)
         {
-            var currency = CurrencyCodesResolver.GetCurrencyByCode(code);
-            if (expectedResultCode is null)
-                Assert.IsNull(currency);
-            else
-            {
-                Assert.IsNotNull(currency);
-                Assert.AreEqual(expectedResultCode, currency.Code);
-            }
+            var currencies = CurrencyCodesResolver.GetCurrenciesByCode(code);
+            
+            Assert.AreEqual(expectedAmountOfCurrencies, currencies.Count());
         }
         #endregion
     }

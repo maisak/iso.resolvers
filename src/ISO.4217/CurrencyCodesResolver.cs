@@ -322,27 +322,6 @@ namespace ISO._4217
         {
             return GetCurrencyNameByNumber(number.ToString());
         }
-
-        /// <summary>
-        /// Get currency by international number
-        /// </summary>
-        /// <param name="number"></param>
-        /// <returns><see cref="Currency"/> object or <see cref="null"/> if nothing is found</returns>
-        public static Currency GetCurrencyByNumber(string number)
-        {
-            return Codes.FirstOrDefault(currency => 
-                currency.Num.Equals(number, System.StringComparison.OrdinalIgnoreCase));
-        }
-
-        /// <summary>
-        /// Get currency by international number
-        /// </summary>
-        /// <param name="number"></param>
-        /// <returns><see cref="Currency"/> object or <see cref="null"/> if nothing is found</returns>
-        public static Currency GetCurrencyByNumber(int number)
-        {
-            return GetCurrencyByNumber(number.ToString());
-        }
         #endregion
 
         #region Get currency data by code
@@ -352,9 +331,9 @@ namespace ISO._4217
         /// </summary>
         /// <param name="code">Code of a currency, like USD</param>
         /// <returns><see cref="Currency"/> object or <see cref="null"/> if nothing is found</returns>
-        public static Currency GetCurrencyByCode(string code)
+        public static IEnumerable<Currency> GetCurrenciesByCode(string code)
         {
-            return Codes.FirstOrDefault(currency =>
+            return Codes.Where(currency =>
                 currency.Code.Equals(code, System.StringComparison.InvariantCultureIgnoreCase));
         }
         #endregion
