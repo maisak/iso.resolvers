@@ -326,11 +326,11 @@ namespace ISO._4217
 
         #region Get currency data by code
         /// <summary>
-        /// Get currency by its international code.
+        /// Get a list of currencies by the international code.
         /// This operation is case insensitive.
         /// </summary>
         /// <param name="code">Code of a currency, like USD</param>
-        /// <returns><see cref="Currency"/> object or <see cref="null"/> if nothing is found</returns>
+        /// <returns><see cref="List{Currency}"/> or <see langword="null"/> if nothing is found</returns>
         public static IEnumerable<Currency> GetCurrenciesByCode(string code)
         {
             return Codes.Where(currency =>
