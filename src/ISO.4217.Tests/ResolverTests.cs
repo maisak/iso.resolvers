@@ -20,7 +20,7 @@ namespace Tests
 
         [TestCase(978, "EUR")]
         [TestCase(980, "UAH")]
-        [TestCase(840, "USD")]
+        [TestCase(032, "ARS")]
         [TestCase(0, null)]
         public void GetCodeByNumberTest(int number, string expected)
         {
@@ -78,6 +78,17 @@ namespace Tests
             var currencies = CurrencyCodesResolver.GetCurrenciesByCode(code);
             
             Assert.AreEqual(expectedAmountOfCurrencies, currencies.Count());
+        }
+
+        [TestCase(978, 2)]  // normal execution
+        [TestCase(952, 0)]  // normal execution
+        [TestCase(48, 3)]   // short number 
+        [TestCase(959, 0)]  // minor unit not available
+        public void GetCurrencyMinorUnitsByNumber(int number, int minorUnits)
+        {
+            var exponent = CurrencyCodesResolver.GetExponentByNumber(number);
+            
+            Assert.AreEqual(minorUnits, exponent);
         }
         #endregion
     }
