@@ -1,3 +1,4 @@
+using System.Linq;
 using ISO._4217;
 using NUnit.Framework;
 
@@ -6,6 +7,7 @@ namespace Tests
     [TestFixture]
     public class ResolverTests
     {
+        #region By number
         [TestCase("978", "EUR")]
         [TestCase("980", "UAH")]
         [TestCase("840", "USD")]
@@ -61,5 +63,22 @@ namespace Tests
             var code = CurrencyCodesResolver.GetCurrencyNameByNumber(number);
             Assert.AreEqual(expected, code);
         }
+        #endregion
+
+        #region By code
+        [TestCase("EUR", 35)]
+        [TestCase("UAH", 1)]
+        [TestCase("USD", 19)]
+        [TestCase("usd", 19)]
+        [TestCase(null, 0)]
+        [TestCase("ZUZ", 0)]
+        [TestCase("just text", 0)]
+        public void GetCurrenciesByCodeTest(string code, int expectedAmountOfCurrencies)
+        {
+            var currencies = CurrencyCodesResolver.GetCurrenciesByCode(code);
+            
+            Assert.AreEqual(expectedAmountOfCurrencies, currencies.Count());
+        }
+        #endregion
     }
 }

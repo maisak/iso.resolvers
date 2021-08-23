@@ -323,5 +323,19 @@ namespace ISO._4217
             return GetCurrencyNameByNumber(number.ToString());
         }
         #endregion
+
+        #region Get currency data by code
+        /// <summary>
+        /// Get a list of currencies by the international code.
+        /// This operation is case insensitive.
+        /// </summary>
+        /// <param name="code">Code of a currency, like USD</param>
+        /// <returns><see cref="List{Currency}"/> or <see langword="null"/> if nothing is found</returns>
+        public static IEnumerable<Currency> GetCurrenciesByCode(string code)
+        {
+            return Codes.Where(currency =>
+                currency.Code.Equals(code, System.StringComparison.InvariantCultureIgnoreCase));
+        }
+        #endregion
     }
 }
