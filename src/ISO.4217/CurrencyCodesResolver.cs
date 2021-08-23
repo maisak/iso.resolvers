@@ -350,6 +350,19 @@ namespace ISO._4217
             return Codes.Where(currency =>
                 currency.Code.Equals(code, StringComparison.InvariantCultureIgnoreCase));
         }
+
+        /// <summary>
+        /// Get currency exponent by the code.
+        /// </summary>
+        /// <param name="code">3-letter code of a currency, like EUR for Euro.</param>
+        /// <returns>Exponent value or 0, if not found.</returns>
+        public static int GetExponentByCode(string code)
+        {
+            var currency = Codes.FirstOrDefault(x => x.Code == code);
+            int.TryParse(currency?.Exponent, out var exponent);
+            
+            return exponent;
+        }
         #endregion
     }
 }

@@ -90,6 +90,18 @@ namespace Tests
             
             Assert.AreEqual(minorUnits, exponent);
         }
+
+        [TestCase("EUR", 2)]  // normal execution
+        [TestCase("XOF", 0)]  // normal execution
+        [TestCase("BHD", 3)]  // normal execution
+        [TestCase("XAU", 0)]  // minor unit not available
+        [TestCase("AAA", 0)]  // code not exist
+        public void GetCurrencyMinorUnitsByCode(string code, int minorUnits)
+        {
+            var exponent = CurrencyCodesResolver.GetExponentByCode(code);
+            
+            Assert.AreEqual(minorUnits, exponent);
+        }
         #endregion
     }
 }
