@@ -1487,6 +1487,13 @@
 			<CcyMnrUnts>2</CcyMnrUnts>
 		</CcyNtry>
 		<CcyNtry>
+			<CtryNm>SIERRA LEONE</CtryNm>
+			<CcyNm>Leone</CcyNm>
+			<Ccy>SLE</Ccy>
+			<CcyNbr>925</CcyNbr>
+			<CcyMnrUnts>2</CcyMnrUnts>
+		</CcyNtry>
+		<CcyNtry>
 			<CtryNm>SINGAPORE</CtryNm>
 			<CcyNm>Singapore Dollar</CcyNm>
 			<Ccy>SGD</Ccy>
