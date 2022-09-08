@@ -229,6 +229,7 @@ namespace ISO._4217
                 new Currency {Num = "941", Code = "RSD", Name = "Serbian Dinar", Country = "SERBIA", Exponent = "2"},
                 new Currency {Num = "690", Code = "SCR", Name = "Seychelles Rupee", Country = "SEYCHELLES", Exponent = "2"},
                 new Currency {Num = "694", Code = "SLL", Name = "Leone", Country = "SIERRA LEONE", Exponent = "2"},
+                new Currency {Num = "925", Code = "SLE", Name = "Leone", Country = "SIERRA LEONE", Exponent = "2"},
                 new Currency {Num = "702", Code = "SGD", Name = "Singapore Dollar", Country = "SINGAPORE", Exponent = "2"},
                 new Currency {Num = "532", Code = "ANG", Name = "Netherlands Antillean Guilder", Country = "SINT MAARTEN (DUTCH PART)", Exponent = "2"},
                 new Currency {Num = "994", Code = "XSU", Name = "Sucre", Country = "SISTEMA UNITARIO DE COMPENSACION REGIONAL DE PAGOS SUCRE", Exponent = "N.A."},
