@@ -12,7 +12,7 @@ Resolver for ISO-4217 codes.
 |...|...|...|...
 ### How to use
 Next code:
-```
+```csharp
 public void Demo()
 {
     var code = CurrencyCodesResolver.GetCodeByNumber("978");
@@ -34,7 +34,7 @@ Resolver for ISO-18245 codes.
 |...|...|
 ### How to use
 Next code:
-```
+```csharp
 public void Demo()
 {
     var mcc = MerchantCategoryCodesResolver.GetByCode("4121");
@@ -56,7 +56,7 @@ Resolver for ISO-3166 codes.
 |...|...|
 ### How to use
 Next code:
-```
+```csharp
 public void Demo()
 {
     var cc = CountryCodesResolver.GetByCode("UA");
